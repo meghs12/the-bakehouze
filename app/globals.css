@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* The BakeHouze — warm cream & cocoa palette (light) */
+    --background: 32 100% 97%;
+    --foreground: 23 37% 12%;
+
+    --card: 36 100% 99%;
+    --card-foreground: 23 37% 12%;
+
+    --popover: 36 100% 99%;
+    --popover-foreground: 23 37% 12%;
+
+    --primary: 25 32% 22%;
+    --primary-foreground: 32 100% 97%;
+
+    --secondary: 33 48% 91%;
+    --secondary-foreground: 25 32% 22%;
+
+    --muted: 33 46% 91%;
+    --muted-foreground: 24 18% 40%;
+
+    --accent: 28 52% 55%;
+    --accent-foreground: 23 37% 12%;
+
+    --destructive: 0 65% 48%;
+    --destructive-foreground: 32 100% 97%;
+
+    --border: 35 42% 85%;
+    --input: 35 42% 85%;
+    --ring: 28 52% 55%;
+
+    --radius: 1rem;
+  }
+
+  .dark {
+    /* The BakeHouze — warm cocoa night palette (dark) */
+    --background: 32 52% 6%;
+    --foreground: 35 55% 91%;
+
+    --card: 27 38% 10%;
+    --card-foreground: 35 55% 91%;
+
+    --popover: 27 38% 10%;
+    --popover-foreground: 35 55% 91%;
+
+    --primary: 32 66% 64%;
+    --primary-foreground: 27 38% 10%;
+
+    --secondary: 26 33% 14%;
+    --secondary-foreground: 35 55% 91%;
+
+    --muted: 26 33% 14%;
+    --muted-foreground: 30 21% 64%;
+
+    --accent: 30 60% 60%;
+    --accent-foreground: 32 52% 6%;
+
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 35 55% 91%;
+
+    --border: 28 35% 17%;
+    --input: 28 35% 17%;
+    --ring: 30 60% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01", "cv01";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    @apply bg-accent/30 text-foreground;
+  }
+
+  /* Subtle warm paper grain across the whole site */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.5;
+    background-image: radial-gradient(
+        hsl(var(--accent) / 0.04) 1px,
+        transparent 1px
+      );
+    background-size: 22px 22px;
+  }
+}
+
+@layer components {
+  /* Headings face */
+  .font-display {
+    @apply font-serif;
+    font-optical-sizing: auto;
+    letter-spacing: -0.01em;
+  }
+
+  /* Eyebrow / label treatment used above section headings */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.22em] text-accent;
+  }
+
+  /* Product image placeholder — the "photo coming soon" card */
+  .image-placeholder {
+    @apply relative flex aspect-square w-full items-center justify-center overflow-hidden
+           rounded-xl border border-dashed border-accent/40 bg-secondary
+           text-center text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground;
+  }
+  .image-placeholder::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      110deg,
+      transparent 30%,
+      hsl(var(--card) / 0.6) 50%,
+      transparent 70%
+    );
+    transform: translateX(-100%);
+    animation: shimmer 2.6s infinite;
+  }
+
+  /* Thin decorative divider with a center dot */
+  .rule-dot {
+    @apply relative h-px w-full bg-border;
+  }
+  .rule-dot::after {
+    content: "";
+    @apply absolute left-1/2 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent;
+  }
+}
+
+/* Respect reduced motion preferences across the whole site */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom scrollbar — warm, subtle */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--secondary));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--accent) / 0.55);
+  border-radius: 9999px;
+  border: 2px solid hsl(var(--secondary));
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent) / 0.8);
+}
