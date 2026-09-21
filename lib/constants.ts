@@ -8,8 +8,8 @@ export const SITE = {
   description:
     "Premium eggless desserts — NYC-style thick cookies, Basque cheesecakes, brownies, cupcakes, birthday cakes and custom celebration cakes. Freshly prepared to order across Bangalore.",
   serviceArea: "Entire Bangalore",
-  url: "https://thebakehouze.example.com",
-  email: "meghamurari12@fmail.com",
+  url: "https://the-bakehouze-eosin.vercel.app/menu",
+  email: "meghamurari12@gmail.com",
   // Placeholder WhatsApp number (country code + number, digits only).
   whatsappNumber: "916376395531",
   whatsappDisplay: "+91 63763 95531",

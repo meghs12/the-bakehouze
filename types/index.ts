@@ -2,7 +2,14 @@
 // Shared application types for The BakeHouze
 // ────────────────────────────────────────────────────────────────────────────
 
-export type ProductCategory = "cookies" | "cheesecake" | "brownies" | "cookie-tins";
+export type ProductCategory =
+  | "cookies"
+  | "cheesecake"
+  | "brownies"
+  | "cookie-tins"
+  | "banana-bread"
+  | "tiramisu"
+  | "gifting";
 
 export interface Product {
   /** URL-safe unique id, used for routing (/product/[slug]) and cart keys */
