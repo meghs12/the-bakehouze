@@ -10,11 +10,18 @@ import type { Product, CategoryMeta } from "@/types";
 // ────────────────────────────────────────────────────────────────────────────
 
 export const CATEGORY_META: CategoryMeta[] = [
+
   {
     id: "cookies",
     title: "Cookies",
     blurb:
       "NYC-style thick cookies with crackly tops and a soft, gooey middle. Baked to order, every single time.",
+  },
+  {
+  id: "buns",
+  title: "Korean Cream Cheese Buns",
+  blurb:
+    "Soft, fluffy buns filled with creamy, garlicky-herby cream cheese.",
   },
   {
     id: "cheesecake",
@@ -56,6 +63,23 @@ export const CATEGORY_META: CategoryMeta[] = [
 
 export const PRODUCTS: Product[] = [
   // ── COOKIES ───────────────────────────────────────────────────────────────
+   {
+    slug: "slutty-cookie",
+    name: "Slutty Cookie",
+    price: 120,
+    image: "/Products/slutty.jpeg",
+    category: "cookies",
+    description:
+      "Triple chocolate cookie stuffed with brownie, topped with Nutella and a brownie bite.",
+    longDescription:
+      "Our indulgent triple chocolate cookie hides a rich, fudgy brownie centre. Finished with a generous Nutella topping and another brownie bite, this is chocolate overload in every bite.",
+    isEggless: true,
+    isWeeklySpecial: true,
+    isBestseller: true,
+    isFeatured: true,
+  },
+ 
+
   {
     slug: "og-chocolate-chip",
     name: "The OG Chocolate Chip",
@@ -66,25 +90,27 @@ export const PRODUCTS: Product[] = [
     isEggless: true,
     isBestseller: true,
     isFeatured: true,
+    
     description: "Brown-butter base, pools of milk chocolate, a whisper of sea salt.",
     longDescription:
       "The one that started it all. A brown-butter dough rested overnight for deep, toffee notes, loaded with pools of melting milk chocolate and finished with flaky sea salt. Thick, chewy edges and a soft centre.",
   },
-  {
-    slug: "mint-chocolate-chip",
-    name: "Mint Chocolate Chip",
-    price: 79,
-    image: "/Products/mint.jpeg",
-    category: "cookies",
-    weight: "70-80g",
-    isEggless: true,
-    description: "Cool mint folded through a chocolate-flecked dough.",
-    longDescription:
-      "A refreshing twist on the classic — fresh mint balanced against milk and white chocolate shards in a thick, chewy cookie that never tips into toothpaste territory.",
-  },
+  // {
+  //   slug: "mint-chocolate-chip",
+  //   name: "Mint Chocolate Chip",
+  //   price: 79,
+  //   image: "/Products/mint.jpeg",
+  //   category: "cookies",
+  //   weight: "70-80g",
+  //   isEggless: true,
+  //   description: "Cool mint folded through a chocolate-flecked dough.",
+  //   longDescription:
+  //     "A refreshing twist on the classic — fresh mint balanced against milk and white chocolate shards in a thick, chewy cookie that never tips into toothpaste territory.",
+  // },
   {
     slug: "oreo-cookies-n-cream",
     name: "Oreo Cookies n Cream",
+
     price: 85,
     image: "/Products/oreo cookies n cream.png",
     category: "cookies",
@@ -205,6 +231,19 @@ export const PRODUCTS: Product[] = [
     description: "Toasty roasted almonds and mellow milk chocolate.",
     longDescription:
       "Toasty roasted almonds and mellow milk chocolate in a chewy cookie with a satisfying nutty crunch in every bite.",
+  },
+  // ── BUNS  ────────────────────────────────────────────
+   {
+    slug: "korean-cream-cheese-bun",
+    name: "Korean Cream Cheese Bun",
+    price: 169,
+    image: "/Products/KCB.jpeg",
+    category: "buns",
+    isWeeklySpecial: true,
+    description:
+      "Soft, fluffy bun filled with garlicky-herby cream cheese.",
+    isEggless: true,
+    isFeatured: true,
   },
 
   // ── CHEESECAKE (MINI BASQUES) ────────────────────────────────────────────
@@ -453,7 +492,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "regular-chocolate-chip-cookie-tin",
     name: "Regular Chocolate Chip Cookie Tin",
-    price: 600,
+    price: 650,
     image: "/Products/occ.png",
     category: "cookie-tins",
     weight: "420-450g",
@@ -467,7 +506,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "double-chocolate-chip-cookie-tin",
     name: "Double Chocolate Chip Cookie Tin",
-    price: 650,
+    price: 700,
     image: "/Products/dcc.jpeg",
     category: "cookie-tins",
     weight: "420-450g",
@@ -481,7 +520,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "triple-chocolate-chip-cookie-tin",
     name: "Triple Chocolate Chip Cookie Tin",
-    price: 700,
+    price: 750,
     image: "/Products/tcc.jpeg",
     category: "cookie-tins",
     weight: "420-450g",
@@ -495,7 +534,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "biscoff-white-chocolate-cookie-tin",
     name: "Biscoff White Chocolate Cookie Tin",
-    price: 750,
+    price: 800,
     image: "/Products/bcc.png",
     category: "cookie-tins",
     weight: "420-450g",
@@ -509,7 +548,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "nutella-milk-chocolate-cookie-tin",
     name: "Nutella Milk Chocolate Cookie Tin",
-    price: 750,
+    price: 800,
     image: "/Products/nmccc.jpeg",
     category: "cookie-tins",
     weight: "420-450g",
@@ -523,7 +562,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "red-velvet-white-chocolate-chip-cookie-tin",
     name: "Red Velvet White Chocolate Chip Cookie Tin",
-    price: 700,
+    price: 800,
     image: "/Products/rcc.png",
     category: "cookie-tins",
     weight: "420-450g",
@@ -539,7 +578,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "bbcc-banana-bread-half-pound",
     name: "Brown Butter Chocolate Chip Banana Bread",
-    price: 180,
+    price: 230,
     image: "/Products/bbccbb.jpeg",
     category: "banana-bread",
     weight: "1/2 lb",
@@ -551,7 +590,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "bbcc-banana-bread-one-pound",
     name: "Brown Butter Chocolate Chip Banana Bread",
-    price: 350,
+    price: 459,
     image: "/Products/bbccbb.jpeg",
     category: "banana-bread",
     weight: "1 lb",
@@ -563,7 +602,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "bbcc-banana-bread-two-pound",
     name: "Brown Butter Chocolate Chip Banana Bread",
-    price: 735,
+    price: 899,
     image: "/Products/bbccbb.jpeg",
     category: "banana-bread",
     weight: "2 lb",
@@ -589,7 +628,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "tiramisu-500g",
     name: "Tiramisu",
-    price: 550,
+    price: 699,
     image: "/Products/tiratin.png",
     category: "tiramisu",
     weight: "500g",

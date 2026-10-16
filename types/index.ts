@@ -2,14 +2,18 @@
 // Shared application types for The BakeHouze
 // ────────────────────────────────────────────────────────────────────────────
 
+
 export type ProductCategory =
   | "cookies"
+  | "buns"
+  | "nutella cupcakes"
   | "cheesecake"
   | "brownies"
   | "cookie-tins"
   | "banana-bread"
   | "tiramisu"
   | "gifting";
+
 
 export interface Product {
   /** URL-safe unique id, used for routing (/product/[slug]) and cart keys */
@@ -28,6 +32,7 @@ export interface Product {
   isEggless?: boolean;
   isBestseller?: boolean;
   isFeatured?: boolean;
+  isWeeklySpecial?: boolean;
   /**
    * Path to a real product photo once available, relative to /public.
    * Leave undefined to render the "Product Image Coming Soon" placeholder.
